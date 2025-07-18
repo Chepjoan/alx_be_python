@@ -21,4 +21,3 @@ match operation:
             print("Cannot divide by zero.")
     case _:
         print("Invalid operation. Please choose one of +, -, *, /.")
-
