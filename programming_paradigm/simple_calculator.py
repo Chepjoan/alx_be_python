@@ -1,16 +1,25 @@
-class SimpleCalculator:
-    """A simple calculator class that supports basic arithmetic operations."""
+class BankAccount:
+    """A simple bank account class."""
 
-    def add(self, a, b):
-        return a + b
+    def __init__(self, initial_balance=0):
+        self.balance = initial_balance
 
-    def subtract(self, a, b):
-        return a - b
+    def deposit(self, amount):
+        """Add amount to balance."""
+        if amount > 0:
+            self.balance += amount
+        else:
+            print("Deposit amount must be positive.")
 
-    def multiply(self, a, b):
-        return a * b
+    def withdraw(self, amount):
+        """Subtract amount from balance if funds are sufficient."""
+        if amount > self.balance:
+            print("Insufficient funds.")
+        elif amount <= 0:
+            print("Withdrawal amount must be positive.")
+        else:
+            self.balance -= amount
 
-    def divide(self, a, b):
-        if b == 0:
-            return None
-        return a / b
+    def display_balance(self):
+        """Display the current balance with two decimal places."""
+        print(f"Current Balance: ${self.balance:.2f}")
