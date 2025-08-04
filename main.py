@@ -1,16 +1,21 @@
-import sys
-from robust_division_calculator import safe_divide
+from oop.library_system import Book, EBook, PrintBook, Library
 
 def main():
-    if len(sys.argv) != 3:
-        print("Usage: python main.py <numerator> <denominator>")
-        sys.exit(1)
+    # Create a Library instance
+    my_library = Library()
 
-    numerator = sys.argv[1]
-    denominator = sys.argv[2]
+    # Create instances of each type of book
+    classic_book = Book("Pride and Prejudice", "Jane Austen")
+    digital_novel = EBook("Snow Crash", "Neal Stephenson", 500)
+    paper_novel = PrintBook("The Catcher in the Rye", "J.D. Salinger", 234)
 
-    result = safe_divide(numerator, denominator)
-    print(result)
+    # Add books to the library
+    my_library.add_book(classic_book)
+    my_library.add_book(digital_novel)
+    my_library.add_book(paper_novel)
+
+    # List all books in the library
+    my_library.list_books()
 
 if __name__ == "__main__":
     main()
