@@ -1,24 +1,20 @@
-class BankAccount:
-    """A simple BankAccount class to manage deposits, withdrawals, and balance display."""
+class SimpleCalculator:
+    """A simple calculator class that supports basic arithmetic operations."""
 
-    def __init__(self, initial_balance=0.0):
-        """Initialize the account with an optional initial balance."""
-        self.balance = initial_balance
+    def add(self, a, b):
+        """Return the addition of a and b."""
+        return a + b
 
-    def deposit(self, amount):
-        """Deposit the specified amount into the account."""
-        if amount > 0:
-            self.balance += amount
-            return True
-        return False
+    def subtract(self, a, b):
+        """Return the subtraction of b from a."""
+        return a - b
 
-    def withdraw(self, amount):
-        """Withdraw the specified amount from the account if sufficient balance exists."""
-        if 0 < amount <= self.balance:
-            self.balance -= amount
-            return True
-        return False
+    def multiply(self, a, b):
+        """Return the multiplication of a and b."""
+        return a * b
 
-    def display_balance(self):
-        """Display the current balance with two decimal places."""
-        print(f"Current Balance: ${self.balance:.2f}")
+    def divide(self, a, b):
+        """Return the division of a by b. Returns None if b is zero."""
+        if b == 0:
+            return None
+        return a / b
